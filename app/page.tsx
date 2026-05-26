@@ -160,6 +160,19 @@ export default function Home() {
     setScreen("print");
   }
 
+function clearAllInputs() {
+  setYesEos5("");
+  setYesEos2("");
+  setYesPrice("");
+
+  setNoJan("");
+  setNoEos5("");
+  setNoEos2("");
+  setNoPrice("");
+
+  setPrintSource(null);
+}
+
   return (
     <main className={styles.app}>
       {screen === "top" && (
@@ -177,6 +190,10 @@ export default function Home() {
           <button className={styles.noButton} onClick={() => setScreen("no")}>
             NO
           </button>
+
+          <button className={styles.clearButton} onClick={clearAllInputs}>
+  クリア
+</button>
         </section>
       )}
 
