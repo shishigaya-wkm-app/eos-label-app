@@ -1,13 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "バーコード作成アプリ",
-  description: "EOS/JANバーコード発行アプリ",
+  description: "バーコード作成アプリ",
+
+  manifest: "/manifest.json",
+
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "バーコード作成",
+    title: "バーコード",
+  },
+
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
   },
 };
 
