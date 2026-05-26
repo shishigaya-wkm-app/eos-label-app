@@ -71,25 +71,25 @@
 .yesButton,
 .noButton {
   position: absolute;
-  width: 18%;
-  height: 16%;
+  width: 22%;
+  height: 20%;
   border: none;
-  border-radius: 2cqh;
-  font-size: 7cqh;
+  border-radius: 2.5cqh;
+  font-size: 9cqh;
   font-weight: bold;
   color: white;
   cursor: pointer;
 }
 
 .yesButton {
-  left: 20%;
-  top: 36%;
+  left: 24%;
+  top: 38%;
   background: #5d98d0;
 }
 
 .noButton {
-  left: 55%;
-  top: 36%;
+  left: 54%;
+  top: 38%;
   background: #8fd14c;
 }
 
