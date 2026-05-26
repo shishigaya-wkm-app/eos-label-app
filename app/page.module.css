@@ -1,142 +1,527 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  background: #d9d9d9;
+  overflow-x: hidden;
+  font-family:
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Yu Gothic",
+    sans-serif;
+}
 
-  --text-primary: #000;
-  --text-secondary: #666;
+.ipadPage,
+.printCanvas {
+  position: relative;
+  width: min(100vw, 133.333vh);
+  height: min(75vw, 100vh);
+  margin: 0 auto;
+  background: #ececec;
+  overflow: hidden;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+.header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 6.5%;
+  background: black;
+  color: #ffd200;
+  font-size: 3.5cqh;
+  font-weight: bold;
   display: flex;
-  flex: 1;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
 }
 
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
-}
-
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+.backButton {
+  position: absolute;
+  left: 2.5%;
+  top: 9.5%;
+  width: 10%;
+  height: 7%;
+  border: none;
+  border-radius: 1.2cqh;
+  background: #7c7c7c;
+  color: white;
+  font-size: 2.1cqh;
   cursor: pointer;
-  width: fit-content;
+}
+
+.questionBox {
+  position: absolute;
+  left: 15%;
+  top: 14%;
+  width: 70%;
+  height: 13%;
+  border: 2px solid #444;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8cqh;
+}
+
+.questionBox span {
+  font-size: 4cqh;
+  font-weight: bold;
+}
+
+.yesButton,
+.noButton {
+  position: absolute;
+  width: 18%;
+  height: 16%;
+  border: none;
+  border-radius: 2cqh;
+  font-size: 7cqh;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.yesButton {
+  left: 20%;
+  top: 36%;
+  background: #5d98d0;
+}
+
+.noButton {
+  left: 55%;
+  top: 36%;
+  background: #8fd14c;
+}
+
+.guideTextYes,
+.guideTextNo {
+  position: absolute;
+  left: 4.5%;
+  top: 24%;
+  font-size: 3.4cqh;
   font-weight: 500;
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.yesEosArea {
+  position: absolute;
+  left: 4.5%;
+  top: 33%;
+  width: 42%;
+  height: 14%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.eos5Input,
+.eos2Input {
+  border: 2px solid #222;
+  background: white;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: none;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.eos5Input {
+  width: 60%;
+  height: 100%;
+  font-size: 6.5cqh;
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.eos2Input {
+  width: 28%;
+  height: 100%;
+  font-size: 6.5cqh;
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.hyphen {
+  font-size: 5.5cqh;
+  font-weight: bold;
+}
+
+.arrowYes,
+.arrowNo {
+  position: absolute;
+  color: #f5b800;
+  font-weight: bold;
+  letter-spacing: -0.7cqh;
+}
+
+.arrowYes {
+  left: 47%;
+  top: 35%;
+  font-size: 8cqh;
+}
+
+.previewBarcodeYes,
+.previewBarcodeNo {
+  position: absolute;
+  left: 63%;
+  top: 31%;
+  width: 34%;
+  height: 18%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2%;
+}
+
+.yesNote {
+  position: absolute;
+  left: 4.5%;
+  top: 61%;
+  font-size: 3cqh;
+  line-height: 1.55;
+}
+
+.yenCircle,
+.eosCircle,
+.yenCircleNo {
+  position: absolute;
+  border-radius: 50%;
+  background: #8d8d8d;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.yenCircle {
+  left: 4.5%;
+  top: 80%;
+  width: 7%;
+  height: 7%;
+  font-size: 4cqh;
+}
+
+.yesPriceInput {
+  position: absolute;
+  left: 13%;
+  top: 79%;
+  width: 44%;
+  height: 9%;
+  border: 2px solid #222;
+  background: white;
+  text-align: center;
+  font-size: 5.5cqh;
+  font-weight: bold;
+}
+
+.issueButtonYes {
+  position: absolute;
+  left: 66%;
+  top: 79%;
+  width: 26%;
+  height: 9%;
+}
+
+.janInput {
+  position: absolute;
+  left: 4.5%;
+  top: 33%;
+  width: 50%;
+  height: 12%;
+  border: 2px solid #222;
+  background: white;
+  text-align: center;
+  font-size: 5.5cqh;
+  font-weight: bold;
+}
+
+.arrowNo {
+  left: 55%;
+  top: 35%;
+  font-size: 7cqh;
+}
+
+.noNote {
+  position: absolute;
+  left: 4.5%;
+  top: 60%;
+  font-size: 2.8cqh;
+  line-height: 1.55;
+}
+
+.eosCircle {
+  left: 4.5%;
+  top: 73%;
+  width: 7%;
+  height: 7%;
+  font-size: 2.4cqh;
+}
+
+.noEosArea {
+  position: absolute;
+  left: 13%;
+  top: 71.5%;
+  width: 42%;
+  height: 9%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
+.yenCircleNo {
+  left: 4.5%;
+  top: 84%;
+  width: 7%;
+  height: 7%;
+  font-size: 4cqh;
+}
+
+.noPriceInput {
+  position: absolute;
+  left: 13%;
+  top: 83%;
+  width: 44%;
+  height: 9%;
+  border: 2px solid #222;
+  background: white;
+  text-align: center;
+  font-size: 5.5cqh;
+  font-weight: bold;
+}
+
+.issueButtonNo {
+  position: absolute;
+  left: 66%;
+  top: 83%;
+  width: 26%;
+  height: 9%;
+}
+
+.issueButtonYes,
+.issueButtonNo {
+  border: 2px solid #9b7600;
+  border-radius: 1.2cqh;
+  background: #ffc400;
+  color: white;
+  font-size: 5cqh;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.barcodePlaceholder {
+  color: #777;
+  font-size: 1.5cqh;
+  font-weight: bold;
+}
+
+.barcodeSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 4枚目 */
+
+.printScreen {
+  width: 100vw;
+  min-height: 100vh;
+  background: #d9d9d9;
+}
+
+.printCanvas {
+  background: white;
+}
+
+.printButton,
+.topButton {
+  position: absolute;
+  top: 8%;
+  z-index: 100;
+  border: none;
+  border-radius: 1.2cqh;
+  color: white;
+  cursor: pointer;
+}
+
+.printButton {
+  left: 2%;
+  width: 10%;
+  height: 6%;
+  background: #ff9800;
+  font-size: 2.2cqh;
+}
+
+.topButton {
+  left: 14%;
+  width: 13%;
+  height: 6%;
+  background: #666;
+  font-size: 2cqh;
+}
+
+.printTitleTag,
+.printTitlePackage,
+.printTitleSeal {
+  position: absolute;
+  top: 18%;
+  font-weight: bold;
+  font-size: 3.1cqh;
+}
+
+.printTitleTag {
+  left: 9%;
+}
+
+.printTitlePackage {
+  left: 38%;
+}
+
+.printTitleSeal {
+  left: 68%;
+}
+
+.tagColumn {
+  position: absolute;
+  left: 8%;
+  top: 29%;
+  width: 22%;
+  height: 58%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.packageColumn {
+  position: absolute;
+  left: 38%;
+  top: 30%;
+  width: 22%;
+  height: 56%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tagLabel {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.packageLabel {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sealColumn {
+  position: absolute;
+  left: 67%;
+  top: 25%;
+  width: 25%;
+  height: 66%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sealLabel {
+  position: relative;
+  width: 100%;
+  height: 45%;
+  border: 2px dashed #333;
+  border-radius: 2.5cqh;
+  background: white;
+}
+
+.workmanLogoImage {
+  position: absolute;
+  left: 8%;
+  top: 9%;
+  width: 34%;
+  height: auto;
+}
+
+.sealNumber {
+  position: absolute;
+  left: 44%;
+  top: 8%;
+  font-size: 4.2cqh;
+  font-weight: bold;
+}
+
+.sealEos {
+  position: absolute;
+  left: 9%;
+  top: 37%;
+  font-size: 2.8cqh;
+  font-weight: bold;
+}
+
+/* 税込を金額から離して左側へ */
+.taxText {
+  position: absolute;
+  left: 20%;
+  top: 55%;
+  font-size: 2.2cqh;
+  font-weight: bold;
+}
+
+/* 金額は右側に固定 */
+.sealPrice {
+  position: absolute;
+  right: 10%;
+  top: 48%;
+  font-size: 4.6cqh;
+  font-weight: bold;
+}
+
+/* バーコードを横線と同じ幅へ */
+.sealBarcode {
+  position: absolute;
+  left: 2%;
+  bottom: 12%;
+  width: 96%;
+  height: 19%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sealBottomLine {
+  position: absolute;
+  left: 18%;
+  bottom: 8%;
+  width: 64%;
+  height: 1px;
+  background: #333;
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
   }
 
-  .page {
-    --background: #000;
-    --foreground: #000;
+  html,
+  body {
+    width: 297mm;
+    height: 210mm;
+    overflow: hidden;
+    background: white;
+  }
 
-    --text-primary: #ededed;
-    --text-secondary: #999;
+  .printButton,
+  .topButton,
+  .header {
+    display: none;
+  }
 
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .printScreen {
+    background: white;
+  }
+
+  .printCanvas {
+    width: 297mm;
+    height: 210mm;
+    margin: 0;
   }
 }
