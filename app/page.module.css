@@ -486,7 +486,7 @@
 
 .taxText {
   position: absolute;
-  left: 18%;
+  left: 8%;
   top: 54%;
   font-size: 1.8cqh;
   font-weight: bold;
@@ -505,7 +505,7 @@
 .sealBarcode {
   position: absolute;
   left: 8%;
-  bottom: 11%;
+  bottom: 10%;
   width: 84%;
   height: 23%;
   display: flex;
@@ -522,19 +522,18 @@
 }
 
 .sealBarcodeInner .barcodeSvg {
-  width: 100%;
+  width: 84%;
   height: 72%;
 }
 
-.sealBarcodeNumber {
-  width: 100%;
-  text-align: center;
-  font-size: 1.05cqh;
-  font-weight: bold;
-  letter-spacing: 0.06cqh;
-  line-height: 1;
-  margin-top: 0.1cqh;
-  font-family: Arial, Helvetica, sans-serif;
+.sealBarcodeNumber{
+    width:84%;
+    font-size:1.6cqh;
+    text-align:center;
+    font-weight:bold;
+    letter-spacing:0.22cqh;
+    margin-top:0.15cqh;
+    line-height:1;
 }
 
 .sealBottomLine {
