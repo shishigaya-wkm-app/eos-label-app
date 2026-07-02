@@ -445,76 +445,103 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 }
 
 .sealLabel {
   position: relative;
-  width: 100%;
-  height: 45%;
+  width: 64%;
+  height: 33.75%;
   border: 2px dashed #333;
   border-radius: 2.5cqh;
   background: white;
+  overflow: hidden;
 }
 
 .workmanLogoImage {
   position: absolute;
   left: 8%;
-  top: 9%;
-  width: 34%;
+  top: 8%;
+  width: 40%;
   height: auto;
 }
 
 .sealNumber {
   position: absolute;
-  left: 44%;
+  left: 52%;
   top: 8%;
-  font-size: 4.2cqh;
+  font-size: 3.2cqh;
   font-weight: bold;
+  line-height: 1;
 }
 
 .sealEos {
   position: absolute;
-  left: 9%;
-  top: 37%;
-  font-size: 2.8cqh;
+  left: 8%;
+  top: 34%;
+  font-size: 2.3cqh;
   font-weight: bold;
+  line-height: 1;
 }
 
-/* 税込を金額から離して左側へ */
 .taxText {
   position: absolute;
-  left: 20%;
-  top: 55%;
-  font-size: 2.2cqh;
+  left: 18%;
+  top: 54%;
+  font-size: 1.8cqh;
   font-weight: bold;
+  line-height: 1;
 }
 
-/* 金額は右側に固定 */
 .sealPrice {
   position: absolute;
-  right: 10%;
+  right: 8%;
   top: 48%;
-  font-size: 4.6cqh;
+  font-size: 3.4cqh;
   font-weight: bold;
+  line-height: 1;
 }
 
-/* バーコードを横線と同じ幅へ */
 .sealBarcode {
   position: absolute;
-  left: 2%;
-  bottom: 12%;
-  width: 96%;
-  height: 19%;
+  left: 8%;
+  bottom: 11%;
+  width: 84%;
+  height: 23%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.sealBarcodeInner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sealBarcodeInner .barcodeSvg {
+  width: 100%;
+  height: 72%;
+}
+
+.sealBarcodeNumber {
+  width: 100%;
+  text-align: center;
+  font-size: 1.05cqh;
+  font-weight: bold;
+  letter-spacing: 0.06cqh;
+  line-height: 1;
+  margin-top: 0.1cqh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .sealBottomLine {
   position: absolute;
-  left: 18%;
-  bottom: 8%;
-  width: 64%;
+  left: 8%;
+  bottom: 7%;
+  width: 84%;
   height: 1px;
   background: #333;
 }

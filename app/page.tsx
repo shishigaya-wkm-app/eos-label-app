@@ -46,7 +46,8 @@ function Barcode({
 
     JsBarcode(svgRef.current, value, {
       format: "EAN13",
-      displayValue: true,
+      displayValue: size !== "seal",
+      flat: size === "seal",
       margin: 0,
       width:
         size === "tag"
@@ -79,7 +80,16 @@ function Barcode({
     return <div className={styles.barcodePlaceholder}></div>;
   }
 
-  return <svg ref={svgRef} className={styles.barcodeSvg} />;
+  if (size === "seal") {
+  return (
+    <div className={styles.sealBarcodeInner}>
+      <svg ref={svgRef} className={styles.barcodeSvg} />
+      <div className={styles.sealBarcodeNumber}>{value}</div>
+    </div>
+  );
+}
+
+return <svg ref={svgRef} className={styles.barcodeSvg} />;
 }
 
 export default function Home() {
@@ -350,24 +360,26 @@ function clearAllInputs() {
             <div className={styles.sealColumn}>
               {[1, 2].map((item) => (
                 <div className={styles.sealLabel} key={item}>
-                  <img
-                    src="/workman-logo.png"
-                    alt="WORKMAN"
-                    className={styles.workmanLogoImage}
-                  />
+  <img
+    src="/workman-logo.png"
+    alt="WORKMAN"
+    className={styles.workmanLogoImage}
+  />
 
-                  <div className={styles.sealNumber}>{logoNumber}</div>
-                  <div className={styles.sealEos}>{activeEos}</div>
+  <div className={styles.sealNumber}>{logoNumber}</div>
 
-                  <div className={styles.taxText}>税込</div>
-                  <div className={styles.sealPrice}>¥{activePrice}</div>
+  <div className={styles.sealEos}>{activeEos}</div>
 
-                  <div className={styles.sealBarcode}>
-                    <Barcode value={activeJan} size="seal" />
-                  </div>
+  <div className={styles.taxText}>税込</div>
 
-                  <div className={styles.sealBottomLine} />
-                </div>
+  <div className={styles.sealPrice}>¥{activePrice}</div>
+
+  <div className={styles.sealBarcode}>
+    <Barcode value={activeJan} size="seal" />
+  </div>
+
+  <div className={styles.sealBottomLine} />
+</div>
               ))}
             </div>
           </div>
