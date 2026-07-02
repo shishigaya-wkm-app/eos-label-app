@@ -495,9 +495,9 @@
 
 .sealPrice {
   position: absolute;
-  right: 8%;
+  right: 10%;
   top: 48%;
-  font-size: 3.4cqh;
+  font-size: 3.5cqh;
   font-weight: bold;
   line-height: 1;
 }
